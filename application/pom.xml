@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>platform</artifactId>
-            <version>RELEASE110</version>
+            <version>RELEASE280</version>
             <type>pom</type>
         </dependency>
 
@@ -68,20 +68,19 @@
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>4.2</version>
                 <configuration>
                     <installerOsSolaris>false</installerOsSolaris>
                     <installerLicenseFile>license.txt</installerLicenseFile>
                     <userSettings>
-                        <property name="default.javac.source" value="1.8"/>
-                        <property name="default.javac.target" value="1.8"/>
+                        <property name="default.javac.source" value="25"/>
+                        <property name="default.javac.target" value="25"/>
                     </userSettings>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.5.0</version>
                 <configuration>
                     <!-- to have the jar plugin pickup the nbm generated manifest -->
                     <archive>
@@ -93,10 +92,10 @@
                 <!-- netbeans modules in 6.9+ are 1.6 compatible -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.14.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.source}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -132,7 +131,7 @@
                                 </configuration>
                             </execution>
                         </executions>
-                        <version>4.2</version>
+                        <version>14.4</version>
                     </plugin>
                 </plugins>
             </build>
